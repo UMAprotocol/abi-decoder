@@ -92,8 +92,8 @@ function _cleanObject(obj) {
       cleanedArray.push(_cleanObject(elt));
     }
     return cleanedArray;
-  } else if (typeof obj === "object") {
-
+  } else if (typeof obj === "object" && obj !== null) {
+    
     // Remove all of the array-style keys, and clean the values for the non array-style keys.
     const cleanedObject = {}; 
     for (const [key, value] of Object.entries(obj)) {
